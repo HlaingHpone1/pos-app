@@ -38,19 +38,19 @@ jobs:
           file: ./deployment/Dockerfile.dev
           push: true
           platforms: linux/amd64,linux/arm64
-          tags: ghcr.io/HlaingHpone1/pos-app:${{ steps.tag-version.outputs.version }}
+          tags: ghcr.io/hlainghpone1/pos-app:${{ steps.tag-version.outputs.version }}
 
       - name: Checkout Kustomize chart Repository
         uses: actions/checkout@v3
         with:
-          repository: HlaingHpone1/workshop-apps
+          repository: hlainghpone1/workshop-apps
           path: deployment
           token: ${{ secrets.MY_ACE_DEVOPS }}
 
       # - name: Update image tag in dev overlay
       #   uses: fjogeleit/yaml-update-action@main
       #   with:
-      #     repository: HlaingHpone1/workshop-apps
+      #     repository: hlainghpone1/workshop-apps
       #     valueFile: pos-app/overlays/dev/kustomization.yaml
       #     branch: main
       #     createPR: "false"
